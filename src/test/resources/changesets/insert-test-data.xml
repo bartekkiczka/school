@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20241920" author="Bartek">
+        <loadData encoding="UTF-8" file="data-tests/school.csv" quotchar="&quot;" separator="," tableName="school">
+            <column header="id" name="id"/>
+            <column header="name" name="name" />
+            <column header="hour_price" name="hour_price" />
+        </loadData>
+        <loadData encoding="UTF-8" file="data-tests/parent.csv" quotchar="&quot;" separator="," tableName="parent">
+            <column header="id" name="id"/>
+            <column header="first_name" name="first_name" />
+            <column header="last_name" name="last_name" />
+        </loadData>
+        <loadData encoding="UTF-8" file="data-tests/child.csv" quotchar="&quot;" separator="," tableName="child">
+            <column header="id" name="id"/>
+            <column header="first_name" name="first_name" />
+            <column header="last_name" name="last_name" />
+            <column header="parent_id" name="parent_id" />
+            <column header="school_id" name="school_id" />
+        </loadData>
+        <loadData encoding="UTF-8" file="data-tests/attendance.csv" quotchar="&quot;" separator="," tableName="attendance">
+            <column header="id" name="id"/>
+            <column header="child_id" name="child_id" />
+            <column header="entry_date" name="entry_date" />
+            <column header="exit_date" name="exit_date" />
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
